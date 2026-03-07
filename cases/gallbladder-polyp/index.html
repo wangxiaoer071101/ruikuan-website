@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胆囊息肉舌诊案例 | 阿宽中医笔记</title>
+    <meta name="description" content="通过舌诊发现胆囊息肉及伴随症状的完整辨证过程">
+    
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent: #c4785a;
+            --accent-light: #d48a6c;
+            --border: #e8e8e8;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+         
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            font-size: 1.6rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+         
+        main {
+            padding-top: 64px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+         
+        .hero {
+            padding: 2rem 0 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #faf8f6 0%, #ffffff 100%);
+        }
+        
+        .hero-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(196, 120, 90, 0.3);
+        }
+        
+        .hero-avatar-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            display: block;
+            box-shadow: 0 4px 20px rgba(196, 120, 90, 0.3);
+            border: 3px solid white;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-desc {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(196, 120, 90, 0.3);
+        }
+        
+        .hero-cta:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 120, 90, 0.4);
+        }
+        
+         
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-icon {
+            font-size: 2.2rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 0.3rem;
+        }
+        
+         
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+        
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .feature-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+         
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .content-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .content-card p {
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+        
+         
+        .big-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin: 1.5rem 0;
+        }
+        
+        .big-text strong {
+            color: var(--text-primary);
+        }
+        
+         
+        .highlight-box {
+            background: linear-gradient(135deg, #fdf8f5 0%, #fff 100%);
+            border: 1px solid rgba(196, 120, 90, 0.2);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box h4 {
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+         
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .styled-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .styled-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .styled-list .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .styled-list .content h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+        
+        .styled-list .content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+         
+        .tag {
+            display: inline-block;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tag-accent {
+            background: rgba(196, 120, 90, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+         
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 0.9rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        td {
+            color: var(--text-secondary);
+        }
+        
+         
+        .contact-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+        
+        .contact-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-text {
+            text-align: left;
+        }
+        
+        .contact-text ul {
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+            margin: 1rem 0;
+        }
+        
+        .contact-text li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-qr {
+            flex-shrink: 0;
+        }
+        
+        .wechat-card {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px var(--shadow);
+            text-align: center;
+        }
+        
+        .wechat-qr-placeholder {
+            width: 180px;
+            height: 180px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+         
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+        
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+         
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .big-text {
+                font-size: 1rem;
+            }
+            
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-text {
+                text-align: center;
+            }
+            
+            .contact-qr {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+    <div class="nav-container">
+        <a href="/" class="logo">
+            <span class="logo-icon">🌿</span>
+            <span>阿宽中医笔记</span>
+        </a>
+        <ul class="nav-links">
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/#academic">学术体系</a></li>
+            
+            <li><a href="/#learning">学习中心</a></li>
+            
+            <li><a href="/#about">阿宽是谁</a></li>
+            
+            <li><a href="/#contact">连接我们</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+<script>
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').startsWith('/#')) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(2);
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
+});
+</script>
+
+    
+    <main>
+        
+<div class="container" style="padding-top: 3rem;">
+    <div class="case-card">
+<div class="case-header">
+<h3>胆囊息肉舌诊案例</h3>
+</div>
+<div class="case-meta">
+<div class="case-meta-item">
+<span class="case-meta-label">案例类型</span>
+<span class="case-meta-value">肝胆疾病</span>
+</div>
+<div class="case-meta-item">
+<span class="case-meta-label">核心病性</span>
+<span class="case-meta-value">气虚 + 湿重</span>
+</div>
+<div class="case-meta-item">
+<span class="case-meta-label">核心病位</span>
+<span class="case-meta-value">肝胆 + 心 + 下焦</span>
+</div>
+<div class="case-meta-item">
+<span class="case-meta-label">验证结果</span>
+<span class="case-meta-value">✓ 完全吻合</span>
+</div>
+</div>
+<div class="case-section">
+<h4>舌象照片</h4>
+<div class="tongue-image-placeholder">
+舌象照片<br>
+（请上传实际舌象照片）
+</div>
+</div>
+<div class="case-section">
+<h4>舌象分析</h4>
+<h5>一、整体观察</h5>
+<ul>
+<li><strong>舌体偏厚</strong> → 偏实</li>
+<li><strong>苔色偏白</strong> → 偏寒</li>
+<li><strong>舌体发青</strong> → 寒象</li>
+<li><strong>苔润</strong> → 不燥，可能有痰湿</li>
+</ul>
+<h5>二、分区定位（独处藏奸）</h5>
+<table>
+<thead>
+<tr>
+<th>舌面位置</th>
+<th>观察特征</th>
+<th>对应问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>心区（舌尖）</strong></td>
+<td>凹陷明显</td>
+<td>心气不足</td>
+</tr>
+<tr>
+<td><strong>肝胆区（舌两侧）</strong></td>
+<td>突出、凸起</td>
+<td>肝胆增生（胆囊息肉、囊肿等）</td>
+</tr>
+<tr>
+<td><strong>舌根</strong></td>
+<td>苔厚腻</td>
+<td>肠道湿气重（大便粘腻）</td>
+</tr>
+<tr>
+<td><strong>舌中线</strong></td>
+<td>明显歪曲</td>
+<td>腰椎问题</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="case-section">
+<h4>辨证思路</h4>
+<div class="highlight-box">
+<strong>证 = 病性 + 病位</strong>
+<ul>
+<li><strong>病性：</strong>气虚（心区凹陷）、湿重（苔厚润）</li>
+<li><strong>病位：</strong>肝胆（两侧突出）、心（舌尖凹陷）、下焦（舌根厚苔）</li>
+</ul>
+</div>
+<p><strong>核心矛盾：</strong>气虚推动无力，痰湿瘀阻肝胆，形成增生性病变。</p>
+</div>
+<div class="case-section">
+<h4>患者反馈验证</h4>
+<table>
+<thead>
+<tr>
+<th>舌象提示</th>
+<th>实际检查结果</th>
+<th>吻合度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>肝胆区突出 → 增生</td>
+<td>胆囊息肉</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>心区凹陷 → 心气不足</td>
+<td>心脏功能减低</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>舌底青筋 → 瘀血</td>
+<td>颈动脉斑块、肝囊肿</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>舌根厚苔 → 下焦湿重</td>
+<td>前列腺饱满肥大</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>舌中线歪曲 → 脊柱问题</td>
+<td>腰椎病变</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="case-section">
+<h4>治疗思路</h4>
+<p><strong>治则：</strong>益气化痰、疏肝利胆、活血散结</p>
+<p><strong>方药思路：</strong></p>
+<ol>
+<li><strong>益气：</strong>四君子汤类（解决心气虚根本）</li>
+<li><strong>疏肝利胆：</strong>四逆散、茵陈蒿汤类</li>
+<li><strong>化痰散结：</strong>温胆汤、海藻玉壶汤类</li>
+<li><strong>活血：</strong>丹参、川芎、赤芍等</li>
+</ol>
+<p><strong>合方思路：</strong>根据"药对"理论，选择作用互补的方剂组合，形成合力。</p>
+</div>
+<div class="case-section">
+<h4>按语</h4>
+<p>本案例充分体现了舌诊的价值：</p>
+<ol>
+<li><strong>宏观辨证：</strong>通过四要素快速把握病性（气虚、湿重）和病位（肝胆、心、下焦）</li>
+<li><strong>微观定位：</strong>舌面分区与脏腑对应，精确定位病变部位</li>
+<li><strong>预测价值：</strong>舌象变化往往先于症状出现，具有预警作用</li>
+</ol>
+<p><strong>核心启示：</strong>先辨证（病性+病位），后辨病/症状。舌诊不是算命，而是提供辨证依据，建立系统的临床思路。</p>
+</div>
+</div>
+<hr>
+<p><span class="tag">气虚</span>
+<span class="tag">湿重</span>
+<span class="tag">肝胆病</span>
+<span class="tag">胆囊息肉</span>
+<span class="tag">心病</span></p>
+
+</div>
+
+    </main>
+    
+    <footer>
+    <div class="container">
+        <p>🌿 阿宽中医笔记 · 以舌诊为入口 · 以经典为根基 · 以实效为目标</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7; font-size: 0.85rem;">
+            <a href="#home" style="color: inherit; text-decoration: underline;">回到顶部</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+document.querySelector('footer a[href="#home"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

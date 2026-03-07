@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta name="generator" content="Hugo 0.123.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿宽中医笔记</title>
+    <meta name="description" content="以舌诊为入口，以经典为根基，以实效为目标的中医辨证体系">
+    
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent: #c4785a;
+            --accent-light: #d48a6c;
+            --border: #e8e8e8;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+         
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            font-size: 1.6rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+         
+        main {
+            padding-top: 64px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+         
+        .hero {
+            padding: 2rem 0 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #faf8f6 0%, #ffffff 100%);
+        }
+        
+        .hero-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(196, 120, 90, 0.3);
+        }
+        
+        .hero-avatar-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            display: block;
+            box-shadow: 0 4px 20px rgba(196, 120, 90, 0.3);
+            border: 3px solid white;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-desc {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(196, 120, 90, 0.3);
+        }
+        
+        .hero-cta:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 120, 90, 0.4);
+        }
+        
+         
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-icon {
+            font-size: 2.2rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 0.3rem;
+        }
+        
+         
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+        
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .feature-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+         
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .content-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .content-card p {
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+        
+         
+        .big-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin: 1.5rem 0;
+        }
+        
+        .big-text strong {
+            color: var(--text-primary);
+        }
+        
+         
+        .highlight-box {
+            background: linear-gradient(135deg, #fdf8f5 0%, #fff 100%);
+            border: 1px solid rgba(196, 120, 90, 0.2);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box h4 {
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+         
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .styled-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .styled-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .styled-list .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .styled-list .content h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+        
+        .styled-list .content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+         
+        .tag {
+            display: inline-block;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tag-accent {
+            background: rgba(196, 120, 90, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+         
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 0.9rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        td {
+            color: var(--text-secondary);
+        }
+        
+         
+        .contact-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+        
+        .contact-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-text {
+            text-align: left;
+        }
+        
+        .contact-text ul {
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+            margin: 1rem 0;
+        }
+        
+        .contact-text li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-qr {
+            flex-shrink: 0;
+        }
+        
+        .wechat-card {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px var(--shadow);
+            text-align: center;
+        }
+        
+        .wechat-qr-placeholder {
+            width: 180px;
+            height: 180px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+         
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+        
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+         
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .big-text {
+                font-size: 1rem;
+            }
+            
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-text {
+                text-align: center;
+            }
+            
+            .contact-qr {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+    <div class="nav-container">
+        <a href="/" class="logo">
+            <span class="logo-icon">🌿</span>
+            <span>阿宽中医笔记</span>
+        </a>
+        <ul class="nav-links">
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/#academic">学术体系</a></li>
+            
+            <li><a href="/#learning">学习中心</a></li>
+            
+            <li><a href="/#about">阿宽是谁</a></li>
+            
+            <li><a href="/#contact">连接我们</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+<script>
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').startsWith('/#')) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(2);
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
+});
+</script>
+
+    
+    <main>
+        
+
+
+<section class="hero" id="home">
+    <div class="container">
+        <img src="/images/avatar.jpg" alt="阿宽" class="hero-avatar-img">
+        <h1>阿宽中医笔记</h1>
+        <p class="hero-subtitle" style="font-size: 1.1rem; color: var(--text-secondary);">全科中医｜舌诊专家｜极简开方</p>
+        <p class="hero-slogan" style="font-size: 1.3rem; color: var(--accent); margin: 0.5rem 0;">从舌诊到开方，从医考到临床</p>
+    </div>
+</section>
+
+
+<section class="section" style="padding-top: 0.5rem;">
+    <div class="container">
+        <div class="section-grid">
+            <a href="#academic" class="section-card">
+                <span class="section-icon-large">🧭</span>
+                <h3>学术体系</h3>
+                <p>极简开方<br>舌诊实战</p>
+            </a>
+            <a href="#learning" class="section-card">
+                <span class="section-icon-large">📚</span>
+                <h3>学习中心</h3>
+                <p>系统课程<br>医考资料</p>
+            </a>
+            <a href="#about" class="section-card">
+                <span class="section-icon-large">👤</span>
+                <h3>阿宽是谁</h3>
+                <p>个人简介<br>成长履历</p>
+            </a>
+            <a href="#contact" class="section-card">
+                <span class="section-icon-large">📱</span>
+                <h3>连接我们</h3>
+                <p>微信咨询<br>留言交流</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="section content-section" id="achievements">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-icon">🏆</span>
+            <h2 class="section-title">核心成就</h2>
+        </div>
+        <div class="achievement-grid">
+            <div class="achievement-card">中医执业助理医师</div>
+            <div class="achievement-card">多年临床与教学经验</div>
+            <div class="achievement-card">医考高分实战导师</div>
+            <div class="achievement-card">极简开方体系创始人</div>
+            <div class="achievement-card">舌诊实战派讲师</div>
+            <div class="achievement-card">专著《经典名方舌诊课》作者</div>
+            <div class="achievement-card">公众号「阿宽杏林笔记」主理人</div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section content-section" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-icon">✨</span>
+            <h2 class="section-title">三大特色</h2>
+        </div>
+        <div class="feature-row">
+            <div class="feature-box">
+                <h3>👅 舌诊专家</h3>
+                <p>以舌辨证，直观清晰</p>
+            </div>
+            <div class="feature-box">
+                <h3>🧭 极简开方</h3>
+                <p>一以贯之，方药有据</p>
+            </div>
+            <div class="feature-box">
+                <h3>🌿 全科中医</h3>
+                <p>内外妇儿，思路通透</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section content-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-icon">🚀</span>
+            <h2 class="section-title">快捷入口</h2>
+        </div>
+        <div class="quick-links">
+            <a href="#" class="quick-btn">免费课程试看</a>
+            <a href="#" class="quick-btn">医考备考资料</a>
+            <a href="#" class="quick-btn">关注公众号</a>
+            <a href="#contact" class="quick-btn">在线留言咨询</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="section content-section" id="academic">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-icon">🧭</span>
+            <h2 class="section-title">学术体系｜理法方药，一以贯之</h2>
+        </div>
+        
+        <div class="content-card">
+            <h3>极简开方——中医辨证总纲</h3>
+            <p>以一套完整、稳定、可复制的辨证框架，把复杂中医简单化、规律化、实用化。不讲虚理，只讲思路；不搞玄学，只重临床。让辨证有方向，开方有依据。</p>
+        </div>
+        
+        <div class="content-card">
+            <h3>舌诊实战——看得见的辨证</h3>
+            <p>舌为心之苗，为脏腑之外镜。从舌质、舌苔、舌形、舌态入手，一步一步教你看懂身体信号，把舌诊变成临床最实用、最直观的诊断工具。不讲空话，全是实战技巧。</p>
+        </div>
+        
+        <div class="content-card">
+            <h3>临床案例｜真实医案·实战思路</h3>
+            <p>收录真实临床案例，包含：主诉 → 舌象 → 辨证 → 思路 → 方药 → 反馈。所有案例均来自临床实践与公众号「阿宽杏林笔记」原创整理，只做真实、可学习、可复制的实战展示。</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section content-section" id="learning" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-icon">📚</span>
+            <h2 class="section-title">学习中心｜从舌诊到开方，从医考到临床</h2>
+        </div>
+        
+        <div class="content-card">
+            <h3>系统课程·免费试看</h3>
+            <p>从零基础到临床实战，从医考考点到开方思路，体系化教学，层层递进。本页面提供免费试看片段，完整课程可添加微信咨询。</p>
+            <div class="course-list" style="margin-top: 1rem;">
+                <div class="course-item">
+                    <strong>初级课程</strong>：舌诊基础、辨证基础，打好中医入门根基。
+                </div>
+                <div class="course-item">
+                    <strong>中级课程</strong>：大内科常见病、极简开方体系、经典方药解析。
+                </div>
+                <div class="course-item">
+                    <strong>高级课程</strong>：妇科、男科、儿科、皮科，全科临床实战提升。
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-card">
+            <h3>医考资料·高效备考</h3>
+            <p>方剂、中药、针灸、中基等高频考点记忆卡片，极简笔记、背诵口诀、真题思路整理。网站仅做部分展示，点击即可跳转微信小店购买完整版。</p>
+        </div>
+        
+        <div class="content-card">
+            <h3>学习方法·书籍分享·备考经验</h3>
+            <p>分享中医学习路线、医考高效复习法、必读书单拆解、学习误区避坑。内容同步自公众号「阿宽杏林笔记」，帮你少走弯路，快速入门、稳步提升。</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section content-section" id="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-icon">👤</span>
+            <h2 class="section-title">阿宽是谁｜做真实、落地、有用的中医</h2>
+        </div>
+        
+        <div class="content-card">
+            <h3>个人简介</h3>
+            <p><strong>阿宽</strong></p>
+            <ul>
+                <li>中医执业助理医师</li>
+                <li>实战派中医讲师</li>
+                <li>极简开方体系创始人</li>
+                <li>专著《经典名方舌诊课》作者</li>
+                <li>专注舌诊与临床辨证教学</li>
+                <li>医考高分实战导师</li>
+                <li>公众号「阿宽杏林笔记」主理人</li>
+            </ul>
+            <p>坚持：通俗、落地、实用、可复制的中医教学与临床思路。</p>
+        </div>
+        
+        <div class="content-card">
+            <h3>成长履历</h3>
+            <ul>
+                <li>深耕中医学习与临床实践</li>
+                <li>医考高分通关，总结一套高效备考方法</li>
+                <li>系统学习中医经典与各家学说</li>
+                <li>创立「极简开方」辨证体系</li>
+                <li>专注舌诊实战教学</li>
+                <li>开设初/中/高级系统课程，帮助学员从医考走向临床</li>
+                <li>运营公众号「阿宽杏林笔记」，持续输出原创中医内容</li>
+                <li>出版专著《经典名方舌诊课》</li>
+                <li>从内容运营到一线临床，完整走过中医成长全路径</li>
+                <li>坚持公益分享，助力中医传承与普及</li>
+            </ul>
+        </div>
+        
+        <div class="content-card">
+            <h3>公益帮助·医者初心</h3>
+            <p>秉持医者仁心，坚持公益初心。不定期开展中医知识公益分享、免费医考资料发放、义诊咨询、困难群体帮扶等活动。不为虚名，只为让更多人认识中医、学好中医、用上中医。</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section content-section" id="contact" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-icon">📱</span>
+            <h2 class="section-title">连接我们｜咨询·学习·合作</h2>
+        </div>
+        
+        <div class="contact-layout">
+            <div class="contact-block">
+                <h3>添加我的微信</h3>
+                <div class="wechat-card">
+                    <img src="/images/wechat-qr.jpg" alt="微信二维码" style="width: 150px; height: auto; border-radius: 8px;">
+                    <p>长按识别添加，备注：中医/医考</p>
+                </div>
+            </div>
+            
+            <div class="contact-block">
+                <h3>关注公众号</h3>
+                <p><strong>阿宽杏林笔记</strong></p>
+                <p>拆医案｜讲方药｜学中医｜备医考</p>
+                <div class="qr-placeholder">公众号二维码</div>
+            </div>
+            
+            <div class="contact-block">
+                <h3>关注视频号</h3>
+                <p><strong>阿宽中医笔记</strong></p>
+                <p>短视频学中医，直观更易懂</p>
+                <div class="qr-placeholder">视频号二维码</div>
+            </div>
+        </div>
+        
+        <div class="content-card" style="margin-top: 2rem;">
+            <h3>留言咨询</h3>
+            <p>中医问题、医考疑问、课程咨询、合作洽谈、建议反馈，均可留言。看到后会第一时间回复。</p>
+            <form class="contact-form" style="margin-top: 1rem;">
+                <input type="text" placeholder="姓名（选填）" style="width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border: 1px solid var(--border); border-radius: 8px;">
+                <input type="text" placeholder="联系方式（选填）" style="width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border: 1px solid var(--border); border-radius: 8px;">
+                <textarea placeholder="留言内容（必填）" rows="4" style="width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border: 1px solid var(--border); border-radius: 8px; resize: vertical;"></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">提交留言</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-section" style="padding: 2rem 0; text-align: center; background: var(--bg-primary); border-top: 1px solid var(--border);">
+    <div class="container">
+        <p style="font-size: 1.1rem; color: var(--text-primary);"><strong>🌿 阿宽中医笔记</strong></p>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">版权所有 © 阿宽中医笔记</p>
+    </div>
+</section>
+
+<style>
+.hero-slogan { font-weight: 600; }
+.section-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.section-card { display: flex; flex-direction: column; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem 1rem; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s; min-height: 120px; }
+.section-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.section-icon-large { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.section-card h3 { font-size: 1.1rem; margin-bottom: 0.3rem; font-weight: 600; }
+.section-card p { color: var(--text-secondary); font-size: 0.85rem; margin: 0; line-height: 1.4; }
+.achievement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.achievement-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; font-weight: 500; }
+.feature-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.feature-box { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: center; }
+.feature-box h3 { color: var(--accent); margin-bottom: 0.5rem; }
+.quick-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.quick-btn { display: inline-block; padding: 1rem 2rem; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s; }
+.quick-btn:hover { background: var(--accent-light); transform: translateY(-2px); }
+.contact-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.contact-block { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: center; }
+.qr-placeholder { width: 150px; height: 150px; background: var(--bg-secondary); border: 2px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); margin: 1rem auto; }
+@media (max-width: 768px) { .section-grid { grid-template-columns: repeat(2, 1fr); } .feature-row { grid-template-columns: 1fr; } .contact-layout { grid-template-columns: 1fr; } .quick-links { flex-direction: column; } }
+</style>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
+
+
+    </main>
+    
+    <footer>
+    <div class="container">
+        <p>🌿 阿宽中医笔记 · 以舌诊为入口 · 以经典为根基 · 以实效为目标</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7; font-size: 0.85rem;">
+            <a href="#home" style="color: inherit; text-decoration: underline;">回到顶部</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+document.querySelector('footer a[href="#home"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
