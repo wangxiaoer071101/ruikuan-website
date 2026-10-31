@@ -501,7 +501,7 @@
             }
         }
     </style>
-</head>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="/school/assets/school.css"><script src="/school/assets/school.js" defer></script></head>
 <body>
     <nav>
     <div class="nav-container">
@@ -509,13 +509,13 @@
             <span class="logo-icon">🌿</span>
             <span>阿宽中医笔记</span>
         </a>
-        <ul class="nav-links">
+        <button class="school-menu-toggle" type="button" aria-controls="home-nav" aria-expanded="false">菜单</button><ul class="nav-links" id="home-nav">
             
             <li><a href="/">首页</a></li>
             
             <li><a href="/#academic">学术体系</a></li>
             
-            <li><a href="/#learning">学习中心</a></li>
+            <li><a href="/#learning">中医学堂</a></li>
             
             <li><a href="/#about">阿宽是谁</a></li>
             
@@ -554,6 +554,11 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     </div>
 </section>
 
+<section class="academy-section" id="learning"><div class="academy-wrap"><div class="academy-title-row"><div><p class="academy-kicker">从基础到临床</p><h2>📚 中医学堂</h2><p>选一条线，慢慢学。课程、笔记本与配套伴读，都从这里进入。</p></div><a class="academy-more" href="/school/">进入中医学堂 →</a></div><div class="academy-grid">
+<a class="academy-card" href="/school/zhongyao/" aria-label="中药：中药心解，进入栏目"><div class="academy-art" aria-hidden="true"><div class="art-book">中药<br>心解</div><div class="art-label">一页药卡<br>一段理解<br>留白记下自己的体会</div></div><div class="academy-card-body"><span class="academy-tag">基础 · 中药</span><h3>中药心解</h3><p>从一味药读起。了解中药学习笔记本，看看怎样读药卡、做比较、记下自己的理解。</p><span class="academy-arrow">笔记本介绍与样页 <span aria-hidden="true">→</span></span></div></a>
+<a class="academy-card" href="/school/wenbing/" aria-label="温病：从入门十讲开始，进入栏目"><div class="academy-art wenbing" aria-hidden="true"><div class="art-line"><span>火郁</span>→<span>发之</span>→<span>透热转气</span></div></div><div class="academy-card-body"><span class="academy-tag">临床 · 温病</span><h3>从温病入门十讲开始</h3><p>从叶天士到赵绍琴，一张图串起温病。看课程介绍，用框架图、逐讲导读与自测辅助学习。</p><span class="academy-arrow">课程介绍与学习伴读 <span aria-hidden="true">→</span></span></div></a>
+</div><p class="academy-footnote">完整视频课程在课程平台学习。这里提供介绍、样页与伴读，具体安排可微信咨询。</p></div></section>
+
 
 <section class="section" style="padding-top: 0.5rem;">
     <div class="container">
@@ -565,8 +570,8 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             </a>
             <a href="#learning" class="section-card">
                 <span class="section-icon-large">📚</span>
-                <h3>学习中心</h3>
-                <p>系统课程<br>医考资料</p>
+                <h3>中医学堂</h3>
+                <p>课程与伴读<br>笔记本与样页</p>
             </a>
             <a href="#about" class="section-card">
                 <span class="section-icon-large">👤</span>
@@ -633,9 +638,9 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             <h2 class="section-title">快捷入口</h2>
         </div>
         <div class="quick-links">
-            <a href="#" class="quick-btn">免费课程试看</a>
-            <a href="#" class="quick-btn">医考备考资料</a>
-            <a href="#" class="quick-btn">关注公众号</a>
+            <a href="/courses/wenbing/" class="quick-btn">温病课程与伴读</a>
+            <a href="/school/zhongyao/" class="quick-btn">中药笔记本样页</a>
+            <a href="#contact" class="quick-btn">关注公众号</a>
             <a href="#contact" class="quick-btn">在线留言咨询</a>
         </div>
     </div>
@@ -667,40 +672,7 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
 </section>
 
 
-<section class="section content-section" id="learning" style="background: var(--bg-secondary);">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-icon">📚</span>
-            <h2 class="section-title">学习中心｜从舌诊到开方，从医考到临床</h2>
-        </div>
-        
-        <div class="content-card">
-            <h3>系统课程·免费试看</h3>
-            <p>从零基础到临床实战，从医考考点到开方思路，体系化教学，层层递进。本页面提供免费试看片段，完整课程可添加微信咨询。</p>
-            <div class="course-list" style="margin-top: 1rem;">
-                <div class="course-item">
-                    <strong>初级课程</strong>：舌诊基础、辨证基础，打好中医入门根基。
-                </div>
-                <div class="course-item">
-                    <strong>中级课程</strong>：大内科常见病、极简开方体系、经典方药解析。
-                </div>
-                <div class="course-item">
-                    <strong>高级课程</strong>：妇科、男科、儿科、皮科，全科临床实战提升。
-                </div>
-            </div>
-        </div>
-        
-        <div class="content-card">
-            <h3>医考资料·高效备考</h3>
-            <p>方剂、中药、针灸、中基等高频考点记忆卡片，极简笔记、背诵口诀、真题思路整理。网站仅做部分展示，点击即可跳转微信小店购买完整版。</p>
-        </div>
-        
-        <div class="content-card">
-            <h3>学习方法·书籍分享·备考经验</h3>
-            <p>分享中医学习路线、医考高效复习法、必读书单拆解、学习误区避坑。内容同步自公众号「阿宽杏林笔记」，帮你少走弯路，快速入门、稳步提升。</p>
-        </div>
-    </div>
-</section>
+
 
 
 <section class="section content-section" id="about">
